@@ -1,0 +1,21 @@
+#!/bin/bash
+#GIT_SSL_NO_VERIFY=true git clone https://github.com/vjvikrant/MY-REPO.git /h/test_Repo2
+git fetch --all
+git rebase
+git checkout master
+echo "Copy the file in the repositroy"
+read flag;
+if [ $flag == yes]
+then 
+    git add *.*
+    git commit -a
+ 
+git commit -a
+git push origin master
+echo "Enter the tag name"
+read tag_name
+git tag "$tag_name"
+git push origin "$tag_name"
+
+
+
